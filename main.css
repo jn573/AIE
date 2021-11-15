@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    margin-top: 0;
+    padding: 10px;
+    width: 700px;
+    background-color: #7EC855;
+    font-family: 'Roboto', SansSerif;
+}
+
+.shopping-cart {
+    display: flex;
+    flex-direction: column;
+    width: 423px;
+    max-height: 750px;
+    border: black solid 1px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.10);
+    border-radius: 6px;
+    margin: auto;
+    background-color: white;
+}
+
+.title {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.description {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 115px;
+}
+
+.description span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+}
+
+.description span:first-child {
+    margin-bottom: 5px;
+}
+
+.description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+}
+
+.item {
+    display: flex;
+    height: 120px;
+    padding: 20px 30px;
+    border-top: 1px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
+    align-items: center;
+}
+
+
+.buttons {
+    /*display: inline-flex;*/
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+}
+
+.delete-btn, .like-btn {
+    display: inline-block;
+    Cursor: pointer;
+}
+
+.delete-btn {
+    top: 9px;
+    left: 15px;
+    width: 18px;
+    height: 17px;
+    background: url('delete-icn.svg') no-repeat center;
+    border: none;
+}
+
+.like-btn {
+    top: 9px;
+    left: 15px;
+    width: 18px;
+    height: 17px;
+    background: url('twitter-heart.png') no-repeat center;
+    border: none;
+}
+
+.plus-btn img {
+    margin-top: 2px;
+}
+
+/* check if this is needed JN */
+fieldset, input {
+    width: 50px;
+    border: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    /*outline: none;*/
+}
+
+.is-active {
+    animation-name: animate;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+    50% {
+        background-position: right;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.image {
+    margin-right: 50px;
+}
+
+@media (min-width: 960px) {
+    .shopping-cart {
+        /*font-size: 1.5em;*/
+        width: 800px
+    }
+
+    .item {
+        height: 150px;
+    }
+
+    .description span {
+        font-size: 1.25rem;
+    }
+}
