@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="icon.png">
+    <!--    <script src="main.js" rel="script" defer></script>-->
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="main.css">
@@ -14,9 +15,12 @@
 </head>
 
 <body>
+
 <header>
     <h1 id="title">Welcome to James</h1>
 </header>
+
+
 <div class="shopping-cart">
     <!-- Title -->
     <div class="title">
@@ -29,20 +33,20 @@
             <button type="button" class="like-btn"></button>
         </div>
         <div class="image">
-            <img src="item-1.png" width="72px"  alt=""/>
+            <img src="item-1.png" width="72px" alt=""/>
         </div>
         <div class="description">
-                <span>Common Projects</span>
-                <span>Bball High</span>
-                <span>White</span>
+            <span>Common Projects</span>
+            <span>Bball High</span>
+            <span>White</span>
         </div>
         <div class="quantity">
             <fieldset>
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="addQty(this)">
                     <img src="plus.svg" alt=""/>
                 </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <input type="text" name="name" value="0">
+                <button class="minus-btn" type="button" name="button" onclick="subQty(this)">
                     <img src="minus.svg" alt=""/>
                 </button>
             </fieldset>
@@ -56,20 +60,20 @@
             <button type="button" class="like-btn"></button>
         </div>
         <div class="image">
-            <img src="item-2.png" width="72px"  alt=""/>
+            <img src="item-2.png" width="72px" alt=""/>
         </div>
         <div class="description">
-                <span>Maison Margiela</span>
-                <span>Future Sneakers</span>
-                <span>White</span>
+            <span>Maison Margiela</span>
+            <span>Future Sneakers</span>
+            <span>White</span>
         </div>
         <div class="quantity">
             <fieldset>
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="addQty(this)">
                     <img src="plus.svg" alt=""/>
                 </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <input type="text" name="name" value="0">
+                <button class="minus-btn" type="button" name="button" onclick="subQty(this)">
                     <img src="minus.svg" alt=""/>
                 </button>
             </fieldset>
@@ -77,7 +81,7 @@
         <div class="total-price">$870</div>
     </div>
 
-        <!-- Product #3 -->
+    <!-- Product #3 -->
     <div class="item">
         <div class="buttons">
             <button type="button" class="delete-btn"></button>
@@ -87,26 +91,56 @@
             <img src="item-3.png" width="72px" alt=""/>
         </div>
         <div class="description">
-                <span>Our Legacy</span>
-                <span>Brushed Scarf</span>
-                <span>Brown</span>
+            <span>Our Legacy</span>
+            <span>Brushed Scarf</span>
+            <span>Brown</span>
         </div>
         <div class="quantity">
             <fieldset>
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="addQty(this)">
                     <img src="plus.svg" alt=""/>
                 </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <input type="text" name="name" value="0">
+                <button class="minus-btn" type="button" name="button" onclick="subQty(this)">
                     <img src="minus.svg" alt=""/>
                 </button>
             </fieldset>
         </div>
         <div class="total-price">$870</div>
     </div>
+    <footer>
+        <form>
+            <a href="terms.html"><img id="moveright" src="terms.png"/></a>
+            <p>Click button below to move the image to right</p>
+            <input type="button" value="Click Me" onclick="moveRight();"/>
+        </form>
+    </footer>
 </div>
 
 <script src="jquery-3.6.0.min.js"></script>
+<script src="main.js" rel="script" defer></script>
+<script>
+    $('.like-btn').on('click', function () {
+        $(this).toggleClass('is-active');
+    })
+    // JS animation
+    let imgObj = null;
+
+    function init() {
+        imgObj = document.getElementById('moveright');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+
+    function moveRight() {
+        if (parseInt(imgObj.style.left) < 705) {
+            imgObj.style.left = parseInt(imgObj.style.left) + 20 + 'px'
+        }
+    }
+
+
+    window.onload = init;
+</script>
 
 </body>
 
